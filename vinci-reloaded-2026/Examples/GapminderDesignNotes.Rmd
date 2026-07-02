@@ -1,0 +1,593 @@
+---
+title: "Visualization Design Canvas"
+author: "Magdalena A. Tkacz"
+subtitle: "Template"
+output:
+  pdf_document:
+    toc: true
+    toc_depth: 3
+  html_document:
+    df_print: paged
+    theme: spacelab
+    highlight: zenburn
+    toc: yes
+    toc_depth: 3
+    toc_float:
+      collapsed: yes
+      smooth_scroll: yes
+    code_fold: hide
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(
+  echo = TRUE,
+  warning = FALSE,
+  message = FALSE,
+  fig.path = "figures/"
+)
+```
+
+# Example Project
+
+# Gapminder — From Data to Visual Language
+
+> *Good visualizations are designed, not generated.*
+
+---
+
+# DN-001 — Dataset Card
+
+## Dataset
+
+**Title**
+
+Gapminder
+
+**Source**
+
+Gapminder Foundation
+
+https://www.gapminder.org/
+
+**Original author**
+
+Gapminder Foundation
+
+---
+
+## Description
+
+The Gapminder dataset contains demographic, economic and health indicators collected for countries around the world over multiple years.
+
+Each observation represents one country in one year.
+
+The dataset combines several variables that allow exploration of relationships between wealth, health and population over time.
+
+---
+
+## Observations
+
+One row = one country in one year.
+
+---
+
+## Variables
+
+| Variable | Type | Description |
+|----------|------|-------------|
+| country | categorical | Country name |
+| continent | categorical | Continent |
+| year | temporal | Observation year |
+| lifeExp | continuous | Life expectancy |
+| pop | continuous | Population |
+| gdpPercap | continuous | GDP per capita |
+
+---
+
+## Data quality
+
+### Missing values
+
+Very few.
+
+### Outliers
+
+Countries with extremely large populations.
+
+Countries with very high GDP per capita.
+
+### Potential bias
+
+Countries differ greatly in population size.
+
+Economic indicators are estimates.
+
+### Initial observations
+
+Health and wealth seem related.
+
+Population varies by several orders of magnitude.
+
+Time appears to play an important role.
+
+---
+
+# DN-002 — Audience & Goal Card
+
+## Audience
+
+Students interested in data visualization.
+
+Basic statistical knowledge.
+
+Little experience with visualization design.
+
+---
+
+## Context
+
+Presentation during a workshop.
+
+---
+
+## Main objective
+
+Explain the relationship between economic development and health.
+
+---
+
+## Key message
+
+Countries become healthier as wealth increases, but development is not uniform.
+
+---
+
+## Main question
+
+How do health, wealth and population change over time?
+
+---
+
+## Success criteria
+
+The audience should immediately recognize:
+
+- relationship between GDP and life expectancy
+- differences between continents
+- population size
+- temporal evolution
+
+---
+
+# DN-003 — Data Understanding Card
+
+## Variables of interest
+
+| Variable | Type | Importance |
+|----------|------|------------|
+| GDP per capita | continuous | High |
+| Life expectancy | continuous | High |
+| Population | continuous | High |
+| Continent | categorical | High |
+| Year | temporal | High |
+
+
+## Relationships
+
+GDP vs. Life expectancy
+
+Population vs/ Country importance
+
+Continent vs. Regional differences
+
+Year vs. Development
+
+
+
+## Interesting questions
+
+How does wealth influence life expectancy?
+
+Do continents evolve differently?
+
+Which countries improve the fastest?
+
+What happens through time?
+
+
+
+## Hypothesis
+
+Countries generally become healthier and wealthier over time.
+
+
+
+# DN-004 — Visualization Mapping Card
+
+## Data → Visual Encoding
+
+| Data | Encoding | Why |
+|------|----------|-----|
+| GDP per capita | X position | Accurate quantitative comparison |
+| Life expectancy | Y position | Accurate quantitative comparison |
+| Population | Bubble size | Magnitude |
+| Continent | Color | Category recognition |
+| Year | Animation | Temporal evolution |
+
+
+
+## Visual hierarchy
+
+### First
+
+Overall relationship between wealth and health.
+
+### Second
+
+Large countries.
+
+### Third
+
+Continental patterns.
+
+
+
+## Accessibility
+
+✔ Colorblind-friendly palette
+
+✔ High contrast
+
+✔ Minimal clutter
+
+✔ Simple labels
+
+
+# DN-005 — Representation Card
+
+## Candidate representations
+
+### Option A
+
+Scatter plot
+
+Advantages
+
+- relationship visible
+- simple
+- accurate
+
+Limitations
+
+- no population
+- no time
+
+
+
+### Option B
+
+Bubble chart
+
+Advantages
+
+- adds population
+
+Limitations
+
+- bubble area harder to compare
+
+
+
+### Option C
+
+Animated bubble chart
+
+Advantages
+
+- shows temporal evolution
+- engaging
+- reveals trajectories
+
+Limitations
+
+- harder to compare specific years
+
+
+
+## Decision
+
+Animated Bubble Chart
+
+Reason:
+
+It communicates five variables simultaneously while maintaining readability.
+
+
+
+# DN-006 — Implementation Card
+
+## Tool
+
+R
+
+ggplot2
+
+gganimate
+
+
+
+## Why?
+
+Grammar of Graphics provides a declarative way to map data onto visual attributes.
+
+Animation naturally represents temporal change.
+
+
+
+## Workflow
+
+1. Import data
+
+2. Explore variables
+
+3. Design mapping
+
+4. Prototype
+
+5. Refine
+
+6. Review
+
+
+
+# DN-007 — Review Card
+
+## Message
+
+✔ Clear
+
+✔ Focused
+
+✔ Honest
+
+
+
+## Audience
+
+✔ Appropriate
+
+✔ Easy to understand
+
+
+
+## Design
+
+✔ Effective color
+
+✔ Good visual hierarchy
+
+✔ Appropriate labels
+
+✔ Limited chartjunk
+
+
+
+## Reflection
+
+Strengths
+
+- multiple variables
+- intuitive mapping
+- memorable
+
+Weaknesses
+
+- animation prevents precise comparison
+- bubble area is less accurate than position
+
+Possible improvements
+
+- small multiples
+- interactive controls
+- annotations
+
+
+# Final Design Summary
+
+## Goal
+
+Explain global development.
+
+## Audience
+
+Students learning visualization.
+
+## Question
+
+How are wealth, health and population related over time?
+
+## Representation
+
+Animated bubble chart.
+
+## Mapping
+
+GDP → X
+
+Life expectancy → Y
+
+Population → Size
+
+Continent → Color
+
+Year → Animation
+
+## Implementation
+
+ggplot2 + gganimate
+
+
+> "The visualization was not chosen because it looks attractive.
+>
+> It was chosen because every visual attribute supports the communication goal."
+
+### Implementation details
+
+#### AI prompt i implementation code.
+
+##### DN-008 — Implementation Prompt
+
+*Exemplary prompt for AI-assisted implementation:*
+
+> Create an R implementation of an animated Gapminder bubble chart.
+>
+> Use the `gapminder` dataset.
+>
+> The visualization should show:
+>
+> - GDP per capita on the X axis,
+> - life expectancy on the Y axis,
+> - population as bubble size,
+> - continent as color,
+> - year as animation frame.
+>
+> Use `ggplot2` and `gganimate`.
+>
+> Use a log scale for GDP per capita.
+>
+> Make the chart readable, clean and suitable for a presentation.
+>
+> Add clear title, subtitle, axis labels and legend labels.
+>
+> Export the animation as a GIF file.
+
+Remarks:
+
+- A prompt should describe design decisions, not code. 
+- The code is simply the implementation of those decisions in R.
+
+##### DN-009 — R Implementation
+
+```{r eval=FALSE, include=FALSE}
+# ============================================================
+# Gapminder Animated Bubble Chart
+# Design-driven implementation
+# ============================================================
+
+# Install packages if needed:
+# install.packages(c("gapminder", "ggplot2", "gganimate", "gifski"))
+
+library(gapminder)
+library(ggplot2)
+library(gganimate)
+library(gifski)
+
+# ------------------------------------------------------------
+# 1. Data
+# ------------------------------------------------------------
+
+data <- gapminder
+
+# ------------------------------------------------------------
+# 2. Static mapping
+# ------------------------------------------------------------
+
+p <- ggplot(
+  data,
+  aes(
+    x = gdpPercap,
+    y = lifeExp,
+    size = pop,
+    color = continent
+  )
+) +
+  geom_point(alpha = 0.7) +
+  scale_x_log10() +
+  scale_size(
+    range = c(2, 18),
+    name = "Population"
+  ) +
+  labs(
+    title = "Health and Wealth of Nations",
+    subtitle = "Year: {frame_time}",
+    x = "GDP per capita (log scale)",
+    y = "Life expectancy",
+    color = "Continent",
+    caption = "Data source: Gapminder"
+  ) +
+  theme_minimal(base_size = 14) +
+  theme(
+    legend.position = "right",
+    plot.title = element_text(face = "bold"),
+    panel.grid.minor = element_blank()
+  )
+
+# ------------------------------------------------------------
+# 3. Animation
+# ------------------------------------------------------------
+
+animated_plot <- p +
+  transition_time(year) +
+  ease_aes("linear")
+
+# ------------------------------------------------------------
+# 4. Render animation
+# ------------------------------------------------------------
+
+animate(
+  animated_plot,
+  width = 900,
+  height = 600,
+  fps = 8,
+  duration = 12,
+  renderer = gifski_renderer("gapminder_animation.gif")
+)
+```
+
+
+##### N-010 — Static Alternative
+
+```{r eval=FALSE, include=FALSE}
+library(gapminder)
+library(ggplot2)
+
+data_2007 <- subset(gapminder, year == 2007)
+
+ggplot(
+  data_2007,
+  aes(
+    x = gdpPercap,
+    y = lifeExp,
+    size = pop,
+    color = continent
+  )
+) +
+  geom_point(alpha = 0.75) +
+  scale_x_log10() +
+  scale_size(
+    range = c(2, 18),
+    name = "Population"
+  ) +
+  labs(
+    title = "Health and Wealth of Nations in 2007",
+    subtitle = "GDP per capita, life expectancy and population",
+    x = "GDP per capita (log scale)",
+    y = "Life expectancy",
+    color = "Continent",
+    caption = "Data source: Gapminder"
+  ) +
+  theme_minimal(base_size = 14) +
+  theme(
+    legend.position = "right",
+    plot.title = element_text(face = "bold"),
+    panel.grid.minor = element_blank()
+  )
+```
+
+# Final Thoughts
+
+Today, the most valuable skill is no longer writing visualization code. Instead it is making and communicating sound design decisions. The code is merely an implementation; the design is where visualization begins.
+
+
+The key competency of the future is not mastering programming syntax or visualization tools, but making sound design decisions and expressing visualization requirements with clarity.
+
