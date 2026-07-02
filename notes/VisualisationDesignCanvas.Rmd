@@ -1,0 +1,295 @@
+---
+title: "Visualization Design Canvas"
+author: "Magdalena A. Tkacz"
+subtitle: "Template"
+output:
+  html_document:
+    df_print: paged
+    theme: spacelab
+    highlight: zenburn
+    toc: yes
+    toc_depth: 3
+    toc_float:
+      collapsed: yes
+      smooth_scroll: yes
+    code_fold: hide
+  pdf_document:
+    toc: true
+    toc_depth: 3
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(
+  echo = TRUE,
+  warning = FALSE,
+  message = FALSE,
+  fig.path = "figures/"
+)
+```
+# Visualization Design Canvas
+
+> *Design before code.*
+
+---
+
+# Project
+
+**Project title**
+
+*Write a short working title.*
+
+---
+
+**Author**
+
+*Your name.*
+
+---
+
+**Date**
+
+*Today's date.*
+
+---
+
+# 1. Dataset
+
+## Dataset
+
+**Name**
+
+*Dataset name.*
+
+**Source**
+
+*Where does it come from? Include URL if available.*
+
+**Description**
+
+*Describe the dataset in 2–3 sentences.*
+
+---
+
+## Data inventory
+
+**Observations**
+
+*What does one row represent?*
+
+**Variables**
+
+*List the most important variables.*
+
+---
+
+## Data quality
+
+**Potential issues**
+
+*Missing values? Outliers? Bias? Measurement errors?*
+
+---
+
+# 2. Audience
+
+## Who is your audience?
+
+*Describe your target audience.*
+
+---
+
+## Background knowledge
+
+**What do they already know?**
+
+*List the assumptions.*
+
+**What do they probably not know?**
+
+*List the knowledge gaps.*
+
+---
+
+## Desired outcome
+
+**What should they understand?**
+
+*Write one or two sentences.*
+
+---
+
+**What should they remember after viewing your visualization?**
+
+*Write one key message.*
+
+---
+
+# 3. Goal
+
+## Main objective
+
+*What is the purpose of your visualization?*
+
+---
+
+## Decision
+
+*What decision should the audience be able to make?*
+
+---
+
+## Key question
+
+*Write the single most important question your visualization should answer.*
+
+---
+
+# 4. Understanding the data
+
+## Variables
+
+| Variable | Type | Notes |
+|----------|------|-------|
+| *Name* | *Continuous / Categorical / Ordinal / Temporal / Spatial / ...* | *Comments* |
+| | | |
+| | | |
+| | | |
+
+---
+
+## Relationships
+
+*Which variables seem to be related?*
+
+---
+
+## Interesting patterns
+
+*What do you expect to discover?*
+
+---
+
+# 5. Design ideas
+
+## Possible visualizations
+
+*List several possible visualization types.*
+
+- *
+- *
+- *
+
+---
+
+## Why these?
+
+*Explain why these visualizations might work.*
+
+---
+
+# 6. Visual mapping
+
+## Data → Visual attributes
+
+| Data | Visual attribute | Why? |
+|------|------------------|------|
+| *Variable* | *Position / Color / Size / Shape / ...* | *Reason* |
+| | | |
+| | | |
+| | | |
+
+---
+
+## Visual hierarchy
+
+### First
+
+*What should attract attention first?*
+
+### Second
+
+*What should be noticed next?*
+
+### Third
+
+*What should the viewer explore afterwards?*
+
+---
+
+# 7. Sketches
+
+## Idea A
+
+*Draw a quick sketch.*
+
+Why?
+
+---
+
+## Idea B
+
+*Draw a quick sketch.*
+
+Why?
+
+---
+
+## Idea C
+
+*Draw a quick sketch.*
+
+Why?
+
+---
+
+# 8. Design review
+
+## Reflection
+
+### Is the message clear?
+
+*Yes / No — explain.*
+
+---
+
+### Is the visualization appropriate for the audience?
+
+*Explain.*
+
+---
+
+### Is there anything unnecessary?
+
+*What could be removed?*
+
+---
+
+### What could be improved?
+
+*List possible improvements.*
+
+---
+
+# 9. Implementation plan
+
+## Tool
+
+*Which software or library will you use?*
+
+---
+
+## Why?
+
+*Explain why you selected this tool.*
+
+---
+
+## Next step
+
+*Describe the first implementation task.*
+
+---
+
+# Notes
+
+*Additional observations, ideas, references or questions.*
