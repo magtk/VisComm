@@ -238,7 +238,7 @@ border-left:8px solid #b03030;
 color:#111111;
 padding: 15px;
 ">
-🚨 **Important Technical & Analytical Disclaimer:** 🚨
+ **Important Technical & Analytical Disclaimer:** 
 
 The code examples below are designed to demonstrate **how** to technically swap geometry layers (`geom_*`) within the programming syntax. They do not necessarily represent correct or meaningful data visualization choices. 
 
